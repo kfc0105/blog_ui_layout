@@ -54,6 +54,15 @@ class MyApp extends StatelessWidget{
       ),
     );
 
+    Widget _buildCard(Color color, String textTop, String textBottum){
+      return Column(
+        children: [
+
+        ],
+      );
+    }
+
+
     /*
           Reference : https://flutter.dev/docs/cookbook/lists/horizontal-list
 
@@ -66,20 +75,35 @@ class MyApp extends StatelessWidget{
     //What does this color thing do?
     Color color = Theme.of(context).primaryColor;
 
+    //need a column top is image and bottom is rect with two text(another column, top and buttom)
+    Widget horizList = Column(
+
+    );
+
+
     Widget horizontalList = Container(
       height: 200.0,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
+          //_buildCard(color, 'hello', 'hi'),
 
+          //First
           Container(
             margin: EdgeInsets.only(left: 20),
-            decoration: BoxDecoration(
-              color: Colors.grey,
-              borderRadius: BorderRadius.all(Radius.circular(4.0)),
-            ),
             width: 160.0,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(4.0),
+              child: Image.asset(
+                'images/aarn-giri-xucZ20Vjiy8-unsplash.jpg',
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
+
+
+
+
           Container(
             margin: EdgeInsets.only(left: 10),
             decoration: BoxDecoration(
@@ -116,6 +140,7 @@ class MyApp extends StatelessWidget{
       ),
     );
 
+
     return MaterialApp(
       /*
       A one-line description used by the device to identify the app for the user.
@@ -149,28 +174,5 @@ class MyApp extends StatelessWidget{
         ),
       ),
     );
-
-    Widget _buildCard(Color color, String textTop, String textBottum){
-      return Column(
-        children: [
-          Image.asset(
-            'iamges/images/aarn-giri-xucZ20Vjiy8-unsplash.jpg'
-          ),
-          Container(
-            margin: const EdgeInsets.only(top: 8),
-            child: Text(
-              textBottum,
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-                color: color,
-              ),
-            ),
-          ),
-        ],
-      );
-    }
-
   }
-
 }
