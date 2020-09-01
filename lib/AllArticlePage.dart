@@ -25,11 +25,7 @@ class SecondRoute extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('All Articles'),
-        actions: [
-          IconButton(icon: Icon(Icons.more_vert),
-            color: Colors.white,
-          ),
-        ],
+
       ),
       //
       body: ListView(

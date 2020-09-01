@@ -1,4 +1,5 @@
 import 'AllArticlePage.dart';
+import 'DetailPage.dart';
 import 'package:flutter/material.dart';
 
 
@@ -80,6 +81,11 @@ class DashBoard extends StatelessWidget {
       ),
     );
 
+    /*
+        Make the cards as a button
+     */
+
+
     Widget _buildCard(Color color, String Heading, String subHeading, String imageLocation, double leftMargin){
       return Container(
         margin: EdgeInsets.only(left: leftMargin),
@@ -99,6 +105,10 @@ class DashBoard extends StatelessWidget {
                 child: ListTile(
                   title: Text(Heading, style: TextStyle(color: Colors.white),),
                   subtitle: Text(subHeading, style: TextStyle(color: Colors.white),),
+                  onTap: () {
+                    Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => DetailPage()),);
+                  },
                 ),
               ),
             ],
